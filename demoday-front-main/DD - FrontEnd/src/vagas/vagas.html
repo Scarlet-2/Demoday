@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/resize.css">
+    <title>Encontre Serviços</title>
+</head>
+<body class="mx-5 scroll">
+    <!-- NavBar -->
+    <nav class="conteiner col-12 d-flex flex-row justify-content-between align-items-center m-0 my-3 p-3 px-sm-5">
+        <a class="" href="#sidebar" id="hamburguer-menu" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+            <img class="col-sm-1 col-4 general_icon" src="../../assets/menu-hamburguer.png" alt="hamburguer-menu">
+        </a>
+        <a class="" href="" id="logo">
+            <img class="col-sm-2 col-4 logo" src="../../assets/Logo_Roxa.png" alt="Logo">
+        </a>
+        <div class=" d-flex flex-row justify-content-between gap-5 align-items-center">
+            <a href="" id="search-btn" class="d-none d-sm-block search_btn_closed">
+                <img class="col-sm-2 general_icon" src="../../assets/pesquisar.png" alt="Search">
+            </a>
+            <a href="" id="user">
+                <img class="col-sm-1 col-4 general_icon" src="../../assets/usuario.png" alt="user">
+            </a>
+        </div>
+    </nav>
+    <!-- SideBar/Menu Hamburguer -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar_label">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close d-flex ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="ms-3" style="list-style-type: none;">
+                <li class="my-3"><a href="#" class="fs-3 general_link">Início</a></li>
+                <!-- Botão com dropdown para secção dos perfis -->
+                <li class="my-3">
+                    <button class="fs-3 general_link border-0 bg-transparent" type="button" data-bs-target="#perfil_dropdownCollapse" data-bs-toggle="collapse" aria-expanded="false" aria-controls="perfil_dropdownCollapse">
+                        <img src="../../assets/dropdown.png" alt=""><span>Perfil</span>
+                    </button>
+                    <!-- Submenus do perfil -->
+                    <div class="collapse" id="perfil_dropdownCollapse">
+                        <ul style="list-style-type: none; margin-left: 1rem;">
+                            <li class="my-2"><a href="#" class="fs-5 general_link">Home</a></li>
+                            <li class="my-2"><a href="#" class="fs-5 general_link">Projetos</a></li>
+                            <li class="my-2"><a href="../../src/perfil_privacidade/perfil_privacidade.html" class="fs-5 general_link">Privacidade</a></li>
+                            <li class="my-2"><a href="../../src/perfil_suporte/perfil_suporte.html" class="fs-5 general_link">Suporte</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="my-3"><a href="../../src/cursos/cursos.html" class="fs-3 general_link">Cursos</a></li>
+                <li class="my-3"><a href="../../src/vagas/vagas.html" class="fs-3 general_link">Vagas</a></li>
+            </ul>
+            <hr style="margin-top: 95%;">
+            <ul class="ms-3" style="list-style-type: none;">
+                <li><a href="../../src/terms_e_privacidade/termosuso_e_privacidade.html" class="general_link">Termos de Uso</a></li>
+                <li><a href="../../src/terms_e_privacidade/termosuso_e_privacidade.html " class="general_link">Políticas de Privacidade</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Delimitação do conteúdo principal -->
+    <div class="conteiner">
+        <!-- Filtros -->
+        <form action="" method="" id="job_filter" class="row d-flex flex-column flex-sm-row justify-content-sm-between justify-content-center align-items-sm-start align-items-center ms-5 mb-5">
+            <div class="row col-8 col-lg-5 d-flex flex-column flex-sm-row ms-5">
+                <!-- ordenar por -->
+                <div class="col-12 col-sm-4 col-md-5 col-xl-6">
+                    <label for="order" class="subtitle fs-5 text-nowrap">Ordenar Por:</label>
+                    <button name="order" class="d-flex justify-content-end col-12 btn border border-2" type="button" data-bs-toggle="collapse" data-bs-target=".collapse1" aria-expanded="false" aria-controls="collapse1">
+                        <img src="../../assets/dropdown.png" alt="dropdown">
+                    </button>
+                    <div class="collapse collapse1 border border-2 rounded-2 mt-2">
+                        <button form="job_filter" class="card card-body border-0 rounded-0 border-bottom col-12">
+                            Data de Publicação
+                        </button>
+                        <button form="job_filter" class="card card-body border-0 rounded-0 border-bottom col-12">
+                            Proximidade
+                        </button>
+                    </div>
+                </div>
+                <!-- Tipos de anúncio -->
+                <div class="col-12 col-sm-4 col-md-5 col-xl-6">
+                    <label for="ad_type" class="subtitle fs-5 text-nowrap">Tipos de Anúncio:</label>
+                    <button name="ad_type" class="d-flex justify-content-end col-12 btn border border-2" type="button" data-bs-toggle="collapse" data-bs-target=".collapse2" aria-expanded="false" aria-controls="collapse2">
+                        <img src="../../assets/dropdown.png" alt="dropdown">
+                    </button>
+                    <div class="collapse collapse2 border border-2 rounded-2 mt-2">
+                        <button form="jobs_filter" class="card card-body border-0 rounded-0 border-bottom col-12">
+                            Presencial
+                        </button>
+                        <button form="jobs_filter" class="card card-body border-0 rounded-0 border-bottom col-12">
+                            Pela Internet
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- filtrar -->
+            <div class="d-flex flex-column col-4 justify-content-center align-items-center">
+                <label for="filter">Filtrar:</label>
+                <button class="border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#filter_sidebar" aria-controls="filter_sidebar">
+                    <img src="../../assets/filtro.png" alt="filtro" class="col-6">
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="filter_sidebar">
+                    <div class="offcanvas-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <form action="">
+                            <h3 class="subtitle">Categorias:</h3>
+                            <div>
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Cards - Max 8 por pag -->
+        <div class="row d-flex flex-column justify-content-center align-items-center gap-5">
+            <!-- Card 1 -->
+            <div class="d-flex flex-column flex-sm-row justify-content-around align-items-center col-12 col-xl-6 border rounded-4">
+                <!-- imagens -->
+                <div id="carouselcontrols1" class="carousel carousel-dark slide col-12 col-sm-4 col-lg-5" >
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../../assets/fotogenericabolo.jpg" class="d-block col-12 rounded-4 my-3" alt="placeholder">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/fotogenericabolo.jpg" class="d-block col-12 rounded-4 my-3" alt="placeholder">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../../assets/fotogenericabolo.jpg" class="d-block col-12 rounded-4 my-3" alt="placeholder">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselcontrols1" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselcontrols1" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!-- Imagens fim -->
+                <!-- Info do card -->
+                <div class="" id="jobcard_info">
+                    <h1 id="card_title" class="subtitle">Título do card</h1>
+                    <p class="ms-3 fw-bold">Localização: <span id="card_local" class="text-black-50">São Paulo - SP</span></p>
+                    <p class="ms-3 fw-bold">Quem postou: <span id="card_author" class="text-black-50">Marcelo Aguiar</span></p>
+                    <p class="ms-3 fw-bold">Valor: <span id="card_payment" class="text-black-50">50,00 R$/Hr</span></p>
+                    <p class="ms-3 fw-bold">Prazo: <span id="card_deadline" class="text-black-50">1 Semana</span></p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- nav entre paginas -->
+        <div class="mt-5">
+            <nav class="d-flex justify-content-center" aria-label="Page navigation example">
+                <ul class="row pagination justify-content-around align-items-center gap-2" id="pagenavigation_links">
+                    <li class="page-item col-2"><a class="page-link d-flex rounded-pill text-black align-items-center justify-content-center border-1" style="width: 3rem; height: 3rem;" id="pagenavlink_1" href="../../src/vagas/vagas.html">1</a></li>
+                    <li class="page-item col-2"><a class="page-link d-flex rounded-pill text-black align-items-center justify-content-center border-1" style="width: 3rem; height: 3rem;" id="pagenavlink_2" href="#">2</a></li>
+                    <li class="page-item col-2"><a class="page-link d-flex rounded-pill text-black align-items-center justify-content-center border-1" style="width: 3rem; height: 3rem;" id="pagenavlink_3" href="#">3</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Botão Criar Serviço -->
+        <div class="sticky-bottom row justify-content-center" style="bottom: 3rem;">
+            <a href="#" class="col-1 general_button text-center py-3 rounded-pill text-decoration-none">
+                <span class="">Criar Serviço</span>
+            </a>
+        </div>
+    </div>
+    
+
+    <!-- Footer -->
+    <footer class="conteiner col-12 d-flex flex-row justify-content-around align-items-center mt-5">
+        <div class="row d-flex flex-column flex-md-row align-items-center">
+            <div class="col-6 col-md-4 offset-1 offset-md-0">
+                <div class="">
+                    <h4 class="subtitle">Links Rápidos: </h4>
+                    <ul class="" id="footerlinks">
+                        <a  class="list-decoration-none text-decoration-none fs-6 text-black" href="../../src/terms_e_privacidade/termosuso_e_privacidade.html">
+                            <li>Termos de Uso</li>
+                        </a>
+                        <a  class="list-decoration-none text-decoration-none fs-6 text-black" href="../../src/terms_e_privacidade/termosuso_e_privacidade.html">
+                            <li>Políticas de Privacidade</li>
+                        </a>
+                        <a  class="list-decoration-none text-decoration-none fs-6 text-black" href="../../src/vagas/vagas.html">
+                            <li>Encontre Trabalho</li>
+                        </a>
+                        <a class="list-decoration-none text-decoration-none fs-6 text-black"  href="../../src/cursos/cursos.html">
+                            <li>Cursos</li>
+                        </a>
+                    </ul>
+                </div>
+                
+            </div>
+            <div class="col-md-4 d-none d-md-flex flex-column align-items-center my-4">
+                <div class="col-md-4">
+                    <img class="logo" src="../../assets/Logo_Roxa.png" alt="LOGO">
+                    <h6 class="text-center">Menina, nem te conto o que temos a oferecer!</h6>
+                </div>
+                
+            </div>
+            <div class="col-6 offset-1 offset-md-0 col-md-4 mt-5 mb-5 mb-md-0">
+                <div class="">
+                    <h4 class="subtitle">Newsletter</h4>    
+                    <p class="newslettertext">Participe de nossa Newsletter e fique por dentro de tudo que recomendamos, para e por nossas freelancers.</p>
+                    <form action="" class="d-flex flex-column align-items-center" id="newsletter">
+                        <input class="w-100 border-bottom border-1 border-dark ps-4 mt-4" style="border: none;" type="text" placeholder="E-mail">
+                        <button class="mt-5 border-bottom border-2 border-dark-50 bg-transparent w-50" form="newsletter" style="border: none;" type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
